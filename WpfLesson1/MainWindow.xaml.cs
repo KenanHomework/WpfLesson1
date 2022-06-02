@@ -25,25 +25,19 @@ namespace WpfLesson1
             InitializeComponent();
         }
 
-        private void btn_RightClick(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Click_Left(object sender, RoutedEventArgs e)
         {
             if (sender is Button btn)
             {
-                Random r = new Random();
-                Brush brush = new SolidColorBrush(Color.FromRgb((byte)r.Next(1, 255), (byte)r.Next(1, 255), (byte)r.Next(1, 233)));
-                btn.Background = brush;
-                MessageBox.Show($"Name: {btn.Name}\nColor: {btn.Background}");
+                Random rand = new Random();
+                btn.Background = new SolidColorBrush(Color.FromRgb((byte)rand.Next(1, 255), (byte)rand.Next(1, 255), (byte)rand.Next(1, 233))); ;
+                MessageBox.Show($"Name ~ {btn.Name}\nColor ID ~ {btn.Background}", "Button Info", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 
 
 
-        private void Button_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        private void Click_Right(object sender, MouseButtonEventArgs e)
         {
             if (sender is Button btn)
             {

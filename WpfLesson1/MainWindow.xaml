@@ -9,11 +9,11 @@
     <!--<StackPanel Orientation="Horizontal"  Height="400" Width="700">
     </StackPanel>-->
     <WrapPanel Orientation="Horizontal" Name="panel" >
-        <Button Name="btn_1" Click="Button_Click"  MouseRightButtonDown="Button_MouseRightButtonDown" Background="DarkGreen" Content="1" Width="100" Height="50" Margin="80"/>
-        <Button Name="btn_2" Click="Button_Click"  MouseRightButtonDown="Button_MouseRightButtonDown" Background="Yellow" Content="2" Width="100" Height="50" Margin="80"/>
-        <Button Name="btn_3" Click="Button_Click"  MouseRightButtonDown="Button_MouseRightButtonDown" Background="DarkBlue" Content="3" Width="100" Height="50" Margin="80"/>
-        <Button Name="btn_4" Click="Button_Click"  MouseRightButtonDown="Button_MouseRightButtonDown" Background="Aqua" Content="4" Width="100" Height="50" Margin="80"/>
-        <Button Name="btn_5" Click="Button_Click"  MouseRightButtonDown="Button_MouseRightButtonDown" Background="Red" Content="5" Width="100" Height="50" Margin="80"/>
-        <Button Name="btn_6" Click="Button_Click"  MouseRightButtonDown="Button_MouseRightButtonDown"  Background="Orange" Content="6" Width="100" Height="50" Margin="80"/>
+        <Button Name="btn_1" Click="Click_Left"  MouseRightButtonDown="Click_Right" Background="DarkGreen" Content="1" Width="100" Height="50" Margin="80"/>
+        <Button Name="btn_2" Click="Click_Left"  MouseRightButtonDown="Click_Right" Background="Yellow" Content="2" Width="100" Height="50" Margin="80"/>
+        <Button Name="btn_3" Click="Click_Left"  MouseRightButtonDown="Click_Right" Background="DarkBlue" Content="3" Width="100" Height="50" Margin="80"/>
+        <Button Name="btn_4" Click="Click_Left"  MouseRightButtonDown="Click_Right" Background="Aqua" Content="4" Width="100" Height="50" Margin="80"/>
+        <Button Name="btn_5" Click="Click_Left"  MouseRightButtonDown="Click_Right" Background="Red" Content="5" Width="100" Height="50" Margin="80"/>
+        <Button Name="btn_6" Click="Click_Left"  MouseRightButtonDown="Click_Right"  Background="Orange" Content="6" Width="100" Height="50" Margin="80"/>
     </WrapPanel>
 </Window>

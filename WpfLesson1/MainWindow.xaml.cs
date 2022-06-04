@@ -30,7 +30,7 @@ namespace WpfLesson1
             if (sender is Button btn)
             {
                 Random rand = new Random();
-                btn.Background = new SolidColorBrush(Color.FromRgb((byte)rand.Next(1, 255), (byte)rand.Next(1, 255), (byte)rand.Next(1, 233))); ;
+                btn.Background = new SolidColorBrush(Color.FromRgb((byte)rand.Next(0, 255), (byte)rand.Next(0, 255), (byte)rand.Next(0, 255))); ;
                 MessageBox.Show($"Name ~ {btn.Name}\nColor ID ~ {btn.Background}", "Button Info", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
@@ -42,7 +42,7 @@ namespace WpfLesson1
             if (sender is Button btn)
             {
                 panel.Children.Remove(btn);
-                Title = (string)btn.Content;
+                Title = $"Deleted Button : {btn.Name}";
             }
         }
     }

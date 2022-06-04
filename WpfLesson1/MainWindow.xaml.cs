@@ -23,25 +23,52 @@ namespace WpfLesson1
         public MainWindow()
         {
             InitializeComponent();
+
+            //Fill Buttons With Random Color
+            foreach (object item in panel.Children)
+                if (item is Button btn)
+                    btn.Background = GetRandomColor();
+
         }
+
+
+        List<Brush> colors = new List<Brush>();
+
+        Random rand = new Random();
+
+
+
+        SolidColorBrush GetRandomColor()
+        {
+            SolidColorBrush color;
+            while (true)
+            {
+                color = new SolidColorBrush(Color.FromRgb((byte)rand.Next(0, 255), (byte)rand.Next(0, 255), (byte)rand.Next(0, 255)));
+                if (!colors.Contains(color))
+                {
+                    colors.Add(color);
+                    break;
+                }
+            }
+            return color;
+        }
+
 
         private void Click_Left(object sender, RoutedEventArgs e)
         {
             if (sender is Button btn)
             {
-                Random rand = new Random();
-                btn.Background = new SolidColorBrush(Color.FromRgb((byte)rand.Next(0, 255), (byte)rand.Next(0, 255), (byte)rand.Next(0, 255))); ;
+                btn.Background = GetRandomColor();
                 MessageBox.Show($"Name ~ {btn.Name}\nColor ID ~ {btn.Background}", "Button Info", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
-
-
 
         private void Click_Right(object sender, MouseButtonEventArgs e)
         {
             if (sender is Button btn)
             {
                 panel.Children.Remove(btn);
+                colors.Remove(btn.Background);
                 Title = $"Deleted Button : {btn.Name}";
             }
         }

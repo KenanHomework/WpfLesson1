@@ -25,12 +25,21 @@ namespace WpfLesson1
             InitializeComponent();
 
             //Fill Buttons With Random Color
-            foreach (object item in panel.Children)
-                if (item is Button btn)
-                    btn.Background = GetRandomColor();
+            for (int i = 0; i < 6; i++)
+            {
+                Button btn = new Button();
+                btn.Name = $"btn_{(i + 1)}";
+                btn.Content = i + 1;
+                btn.Background = GetRandomColor();
+                btn.Width = 100;
+                btn.Height = 50;
+                btn.Margin = new Thickness(80);
+                btn.Click += Click_Left;
+                btn.MouseRightButtonDown += Click_Right;
+                panel.Children.Add(btn);
+            }
 
         }
-
 
         List<Brush> colors = new List<Brush>();
 
